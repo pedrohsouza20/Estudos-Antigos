@@ -1,0 +1,49 @@
+<div class="card">
+    <header class="card" style=" box-sizing: border-box; padding: 10px;">
+        <div class="d-flex justify-content-between">
+            <h1>Cursos</h1>
+            <button class="btn btn-primary">Novo Curso</button>
+        </div>
+    </header>
+
+
+    <div class="card-body">
+        <table class="table" *ngIf="curses$ | async as curses; else loadingError" >
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Curso</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let curse of curses">
+                    <td> {{ curse.id }}</td>
+                    <td> {{ curse.name }}</td>
+                    <td>
+                        <span class="float-right">
+                            <button class="btn btn-outline-warning mb-1 btn-sm">
+                                Atualizar
+                            </button>
+
+                            <button class="btn btn-outline-danger mb-1 btn-sm">
+                                Remover
+                            </button>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <ng-template #loadingError>
+            <div *ngIf="error$ | async; else loading" >
+                Erro ao carregar cursos.
+            </div>
+            <ng-template #loading>
+                <span>Carregando Cursos</span>
+            </ng-template>
+            
+        </ng-template>
+        
+
+    </div>
+</div>

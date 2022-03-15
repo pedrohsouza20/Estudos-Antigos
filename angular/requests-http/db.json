@@ -1,0 +1,12 @@
+{
+  "curses": [
+    {
+      "id": 1,
+      "name": "Angular"
+    },
+    {
+      "name": "Java",
+      "id": 2
+    }
+  ]
+}

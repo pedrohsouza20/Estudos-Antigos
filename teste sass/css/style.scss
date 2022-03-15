@@ -1,0 +1,49 @@
+$vermelho: red;
+$verde: rgb(32, 71, 32);
+*{
+    font-family: 'Verdana';
+}
+@mixin mainTitle{
+    font-size: 3em;
+    color: red;
+    margin: 0 auto;
+    text-align: center;
+    text-transform: uppercase;
+}
+.main-title{
+    @include mainTitle();
+}
+
+@mixin sectionMix{ 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+@mixin divisoes{
+    background: $vermelho;
+    max-width: 100%;
+    width: 400px;
+    height: 200px;
+    border-radius: 5px;
+    border: 2px solid #000;
+    border-bottom: 22px solid $verde;
+    box-shadow: 5px 5px 8px #000;
+    margin: 10px;
+}
+@mixin paragraphs{
+    margin: 15px 45px;
+    font-size: 1.125em;
+    color: #000;
+    line-height: 1.4em;
+    padding: 15px;
+    background: rgba($color: #000000, $alpha: 0.1)
+}
+section{
+    @include sectionMix();
+}
+div{
+    @include divisoes();
+}
+p{
+    @include paragraphs()
+}

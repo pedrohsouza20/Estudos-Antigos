@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    <ul></ul>
+    <script type="text/javascript">
+        var userProfile = {
+	        username: "Nome",
+	        password: "123456",
+	        email: "tt",
+	        adress : {
+		        street: "Street X",
+		        streetNumber: 15,
+                streetTest: "Teste",
+            }
+	    }
+        var userLogs = {
+            lastLogin: "Data",
+            lastModifications: "Last Mods"
+        }
+        var cellphone = {
+            mark: "iPhone",
+            model: "11",
+            releaseYear: 2019
+        }
+        console.log(JSON.stringify(userProfile,));
+        var ul = document.querySelector('ul');
+        ul.innerHTML = JSON.stringify(cellphone);
+    </script>
+</body>
+</html>

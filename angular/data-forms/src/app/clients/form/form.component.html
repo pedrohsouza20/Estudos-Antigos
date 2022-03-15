@@ -1,0 +1,56 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="name">Nome</label>
+        <input type="text" name="name" id="name" formControlName="name">
+    </div>
+
+    <div class="form-group">
+        <label for="type">Tipo</label>
+        <select name="type" id="type" formControlName="type">
+            <option value="1">Pessoa física</option>
+            <option value="2">Pessoa jurídica</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Gênero</label>
+        <div class="form-check">
+            <input type="radio" class="form-chek-input" name="gender" id="male" [value]="1"
+            formControlName="gender">
+            <label for="male" class="form-check-label">Masculino</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-chek-input" name="gender" id="female" [value]="2"
+            formControlName="gender">
+            <label for="male" class="form-check-label">Feminino</label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="dataNascimento">Data de nascimento</label>
+        <input type="date" class="form-control" name="bornDate" id="bornDate" formControlName="bornDate">
+      </div>
+
+    <div class="form-group">
+        <label for="observation">Observação</label>
+        <textarea class="form-control" name="observation" id="observation" rows="3"
+        formControlName="observation"></textarea>
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="isactive" id="isactive"
+        formControlName="isActive">
+        <label class="form-check-label" for="isactive">Li e concordo com os Termos</label>
+      </div>
+    
+      <input type="submit" class="btn btn-primary mt-4" value="Salvar"
+      [disabled]="!form.valid"
+      >
+      <a href="#" class="btn btn-secondary mt-4 ml-2">Cancelar</a>
+
+</form>
+
+<div>
+    {{ form.value | json }}
+    form valido: {{ form.status }}
+</div>

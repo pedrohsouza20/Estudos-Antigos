@@ -1,0 +1,7 @@
+<h3>Informações sobre o livro:</h3>
+
+<p>Titúlo: {{ book.title | camelCase }}</p>
+<p>Avaliação: {{ book.rating | number:'1.1-1' }}</p>
+<p>Páginas: {{ book.pages | number }}</p>
+<p>Preço: {{ book.price | number | currency:'BRL':true }}</p>
+<p>Lançamento: {{ book.releaseYear | date:'dd MMM yyyy' }}</p>

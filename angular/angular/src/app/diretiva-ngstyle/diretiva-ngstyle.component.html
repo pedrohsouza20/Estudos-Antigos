@@ -1,0 +1,16 @@
+<button
+
+    [ngStyle]="{
+        'backgroundColor': buttonActive ? 'blue' : 'gray',
+        'fontWeight': buttonActive ? 'bold' : 'normal',
+        'fontSize': fontSize + 'px'
+    }"
+
+    (click)="changeButtonStatus()"
+
+    class="btn btn-primary"
+
+>
+    Mudar ativo
+</button>
+<input type="text" [(ngModel)]="fontSize">

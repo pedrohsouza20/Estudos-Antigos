@@ -1,0 +1,26 @@
+<nav class="navbar navbar-dark bg-primary">
+    <div class="nav navbar-nav">
+
+        <a class="nav-item nav-link"
+            [class.active]="tab == 'home'"
+            (click)="tab = 'home'">Home
+        </a>
+
+        <a class="nav-item nav-link"
+            [class.active]="tab == 'about'"
+            (click)="tab = 'about'">Sobre
+        </a>
+
+        <a class="nav-item nav-link"
+            [class.active]="tab == 'contact'"
+            (click)="tab = 'contact'">Contato
+        </a>
+
+    </div>
+</nav>
+
+<div class="container" [ngSwitch]="tab" >
+    <p *ngSwitchCase="'about'">Sobre aqui</p>
+    <p *ngSwitchCase="'contact'">Contato aqui</p>
+    <p *ngSwitchDefault>Home aqui</p>
+</div>

@@ -1,0 +1,15 @@
+http://localhost:3000/curses
+
+###
+
+GET http://localhost:3000/curses/2 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Java"
+}
+
+###
+
+DELETE http://localhost:3000/curses/2
+

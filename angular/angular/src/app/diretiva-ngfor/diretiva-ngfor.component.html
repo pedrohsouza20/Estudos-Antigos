@@ -1,0 +1,7 @@
+<h5>Diretiva *ngFor</h5>
+<p>Lista de cursos:</p>
+<ul>
+    <li *ngFor="let curse of curses, let i = index">
+        {{ i + 1 }} - {{ curse }}
+    </li>
+</ul>

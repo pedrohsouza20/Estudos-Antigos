@@ -1,0 +1,7 @@
+<i class="fa-star"
+    [ngClass]="{
+        'far': !isFavorited,
+        'fas': isFavorited
+    }"
+    (click)="changeStarStatus()">
+</i>
